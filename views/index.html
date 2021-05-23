@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,38 @@
     <link rel="stylesheet" type="text/css" href="/public/style.css">
     <title>Document</title>
 </head>
+
 <body>
-    <p>Hi there</p>
+    <!-- Tab links -->
+    <div class="tab">
+        <button id='def' class="tablinks" onclick="openTab(event, 'Length')">Length</button>
+        <button class="tablinks" onclick="openTab(event, 'Temperature')">Temperature</button>
+        <button class="tablinks" onclick="openTab(event, 'Area')">Area</button>
+        <button class="tablinks" onclick="openTab(event, 'Volume')">Volume</button>
+        <button class="tablinks" onclick="openTab(event, 'Weight')">Weight</button>
+
+    </div>
+
+    <!-- Tab content -->
+    <div id="Length" class="tabcontent">
+        <h3>Length</h3>
+    </div>
+
+    <div id="Temperature" class="tabcontent">
+        <h3>Temperature</h3>
+    </div>
+
+    <div id="Area" class="tabcontent">
+        <h3>Area</h3>
+    </div>
+    <div id="Volume" class="tabcontent">
+        <h3>Volume</h3>
+    </div>
+    <div id="Weight" class="tabcontent">
+        <h3>Weight</h3>
+    </div>
 </body>
+<script src="/public/client.js"></script>
+
+
 </html>

@@ -49,6 +49,33 @@ function ConvertHandler() {
     return result;
   };
 
+  this.spellOutUnit = function (unit) {
+    let result;
+    switch (unit) {
+      case "gal":
+        result = "gallons";
+        break;
+      case "lbs":
+        result = "pounds";
+        break;
+      case "mi":
+        result = "miles";
+        break;
+      case "L":
+      case "l":
+        result = "liters";
+        break;
+      case "kg":
+        result = "kilograms";
+      case "km":
+        result = "kilometers";
+        break;
+      default:
+        result = false;
+    }
+    return result;
+  };
+
   this.convert = function (initNum, initUnit) {
     const galToL = 3.78541;
     const lbsToKg = 0.453592;
@@ -85,22 +112,46 @@ function ConvertHandler() {
     let result;
     switch (initUnit) {
       case "gal":
-        result = `${initNum} gallons converts to ${precReturnNum} liters`;
+        result = `${initNum} ${this.spellOutUnit(
+          "gal"
+        )} converts to ${precReturnNum} ${this.spellOutUnit(
+          this.getReturnUnit("gal")
+        )}`;
         break;
       case "lbs":
-        result = `${initNum} pounds converts to ${precReturnNum} kilograms`;
+        result = `${initNum} ${this.spellOutUnit(
+          "lbs"
+        )} converts to ${precReturnNum} ${this.spellOutUnit(
+          this.getReturnUnit("lbs")
+        )}`;
         break;
       case "mi":
-        result = `${initNum} miles converts to ${precReturnNum} kilometers`;
+        result = `${initNum} ${this.spellOutUnit(
+          "mi"
+        )} converts to ${precReturnNum} ${this.spellOutUnit(
+          this.getReturnUnit("mi")
+        )}`;
         break;
       case "L":
-        result = `${initNum} liters converts to ${precReturnNum} gallons`;
+        result = `${initNum} ${this.spellOutUnit(
+          "L"
+        )} converts to ${precReturnNum} ${this.spellOutUnit(
+          this.getReturnUnit("L")
+        )}`;
         break;
       case "kg":
-        result = `${initNum} kilograms converts to ${precReturnNum} pounds`;
+        result = `${initNum} ${this.spellOutUnit(
+          "kg"
+        )} converts to ${precReturnNum} ${this.spellOutUnit(
+          this.getReturnUnit("kg")
+        )}`;
         break;
       case "km":
-        result = `${initNum} kilometers converts to ${precReturnNum} miles`;
+        result = `${initNum} ${this.spellOutUnit(
+          "km"
+        )} converts to ${precReturnNum} ${this.spellOutUnit(
+          this.getReturnUnit("km")
+        )}`;
         break;
       default:
         result = false;

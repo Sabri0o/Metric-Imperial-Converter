@@ -1,5 +1,3 @@
-'use strict';
-
 const ConvertHandler = require('../controllers/convertHandler.js');
 
 module.exports = function (app) {
@@ -12,16 +10,19 @@ module.exports = function (app) {
     let returnUnit = convertHandler.getReturnUnit(req.query.input)
     let returnNum = convertHandler.convert(initNum,initUnit)
     let getString = convertHandler.getString(initNum,initUnit,returnNum,returnUnit)
-    if(initNum && initUnit){
-      res.json({
-        initNum:initNum,
-        initUnit:initUnit,
-        returnUnit:returnUnit,
-        returnNum:returnNum,
-        string:getString})
-    }
-    else{
+    if(!initNum && !returnUnit){
+      res.send("invalid number and unit")
+    } else if(!initNum){
       res.send("invalid number")
-    }
-  })
+      } else if(!returnUnit){
+        res.send("invalid unit")
+        } else {
+          res.json({
+            initNum:initNum,
+            initUnit:initUnit,
+            returnNum: Number(returnNum.toFixed(5)),
+            returnUnit:returnUnit,
+            string:getString})
+          }
+        })
 };

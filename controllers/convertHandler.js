@@ -7,6 +7,8 @@ function ConvertHandler() {
       return (
         Number(initNum.split("/")[0]) / Number(initNum.split("/").slice(-1))
       );
+    } else if (initNum === "") {
+      return 1;
     }
     return Number(initNum);
   };
@@ -14,7 +16,9 @@ function ConvertHandler() {
   this.getUnit = function (input) {
     let regex = RegExp("[a-zA-Z]");
     let start = regex.exec(input).index;
-    return input.slice(start).toLowerCase() === "l" ? "L" : input.slice(start);
+    return input.slice(start).toLowerCase() === "l"
+      ? "L"
+      : input.slice(start).toLowerCase();
   };
 
   this.getReturnUnit = function (initUnit) {
@@ -30,6 +34,7 @@ function ConvertHandler() {
         result = "km";
         break;
       case "L":
+      case "l":
         result = "gal";
         break;
       case "kg":
@@ -60,6 +65,7 @@ function ConvertHandler() {
         result = initNum * miToKm;
         break;
       case "L":
+      case "l":
         result = initNum / galToL;
         break;
       case "kg":
@@ -75,26 +81,26 @@ function ConvertHandler() {
   };
 
   this.getString = function (initNum, initUnit, returnNum, returnUnit) {
+    let precReturnNum = returnUnit ? returnNum.toFixed(5) : returnNum;
     let result;
-    //'3.1 miles converts to 4.98895 kilometers'
     switch (initUnit) {
       case "gal":
-        result = `${initNum} gallons converts to ${returnNum} liters`;
+        result = `${initNum} gallons converts to ${precReturnNum} liters`;
         break;
       case "lbs":
-        result = `${initNum} pounds converts to ${returnNum} kilograms`;
+        result = `${initNum} pounds converts to ${precReturnNum} kilograms`;
         break;
       case "mi":
-        result = `${initNum} miles converts to ${returnNum} kilometers`;
+        result = `${initNum} miles converts to ${precReturnNum} kilometers`;
         break;
       case "L":
-        result = `${initNum} liters converts to ${returnNum} gallons`;
+        result = `${initNum} liters converts to ${precReturnNum} gallons`;
         break;
       case "kg":
-        result = `${initNum} kilograms converts to ${returnNum} pounds`;
+        result = `${initNum} kilograms converts to ${precReturnNum} pounds`;
         break;
       case "km":
-        result = `${initNum} kilometers converts to ${returnNum} miles`;
+        result = `${initNum} kilometers converts to ${precReturnNum} miles`;
         break;
       default:
         result = false;

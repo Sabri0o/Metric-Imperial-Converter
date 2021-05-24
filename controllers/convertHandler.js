@@ -67,6 +67,7 @@ function ConvertHandler() {
         break;
       case "kg":
         result = "kilograms";
+        break;
       case "km":
         result = "kilometers";
         break;

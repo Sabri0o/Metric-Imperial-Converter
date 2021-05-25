@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/public/style.css">
     <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -23,22 +26,220 @@
     <!-- Tab content -->
     <div id="Length" class="tabcontent">
         <h3>Length</h3>
+        <form>
+            <div class="form-row align-items-center">
+                <div class="col-auto">
+                    <input type="number" class="form-control" placeholder="Enter amount">
+                </div>
+                <div class="col-auto">
+                    <select id='from' class="form-control">
+                        <option value="1">Millimetre/s [mm]</option>
+                        <option value="2">Centimetre/s [cm]</option>
+                        <option value="3">Metre/s [m]</option>
+                        <option value="4">Kilometre/s [km]</option>
+                        <option value="5">Inch/s [in]</option>
+                        <option value="6">Feet [ft]</option>
+                        <option value="7">Yard/s [yd]</option>
+                        <option value="8">Mile/s [ml]</option>
+                        <option value="9">Nautical Mile/s [nm]</option>
+                    </select>
+
+                </div>
+
+                <div class="col-auto" for='to'>
+                    <select class="form-control">
+                        <option value="1">Millimetre/s [mm]</option>
+                        <option value="2">Centimetre/s [cm]</option>
+                        <option value="3">Metre/s [m]</option>
+                        <option value="4">Kilometre/s [km]</option>
+                        <option value="5">Inch/s [in]</option>
+                        <option value="6">Feet [ft]</option>
+                        <option value="7">Yard/s [yd]</option>
+                        <option value="8">Mile/s [ml]</option>
+                        <option value="9">Nautical Mile/s [nm]</option>
+                    </select>
+
+                </div>
+
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
     </div>
 
     <div id="Temperature" class="tabcontent">
         <h3>Temperature</h3>
+        <form>
+            <div class="form-row align-items-center">
+                <div class="col-auto">
+                    <input type="number" class="form-control" placeholder="Enter amount">
+                </div>
+                <div class="col-auto">
+                    <select id='from' class="form-control">
+                        <option value="1">Celsius [c]</option>
+                        <option value="2">Fahrenheit [f]</option>
+                    </select>
+
+                </div>
+
+                <div class="col-auto" for='to'>
+                    <select class="form-control">
+                        <option value="1">Celsius [c]</option>
+                        <option value="2">Fahrenheit [f]</option>
+                    </select>
+
+                </div>
+
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
     </div>
 
     <div id="Area" class="tabcontent">
         <h3>Area</h3>
+        <form>
+            <div class="form-row align-items-center">
+                <div class="col-auto">
+                    <input type="number" class="form-control" placeholder="Enter amount">
+                </div>
+                <div class="col-auto">
+                    <select id='from' class="form-control">
+                        <option value="1">Square Millimetre/s [mm2]</option>
+                        <option value="2">Square Centimetre/s [cm2]</option>
+                        <option value="3">Square Metre/s [m2]</option>
+                        <option value="4">Hectare/s [ha]</option>
+                        <option value="5">Square Kilometre/s [km2]</option>
+                        <option value="6">Square Inch/s [in2]</option>
+                        <option value="7">Square Feet [sq ft]</option>
+                        <option value="8">Square Yard/s [yd2]</option>
+                        <option value="9">Acre/s [a]</option>
+                        <option value="10">Square Mile/s [ml2]</option>
+                    </select>
+
+                </div>
+
+                <div class="col-auto" for='to'>
+                    <select class="form-control">
+                        <option value="1">Square Millimetre/s [mm2]</option>
+                        <option value="2">Square Centimetre/s [cm2]</option>
+                        <option value="3">Square Metre/s [m2]</option>
+                        <option value="4">Hectare/s [ha]</option>
+                        <option value="5">Square Kilometre/s [km2]</option>
+                        <option value="6">Square Inch/s [in2]</option>
+                        <option value="7">Square Feet [sq ft]</option>
+                        <option value="8">Square Yard/s [yd2]</option>
+                        <option value="9">Acre/s [a]</option>
+                        <option value="10">Square Mile/s [ml2]</option>
+                    </select>
+
+                </div>
+
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
     </div>
+
     <div id="Volume" class="tabcontent">
         <h3>Volume</h3>
+        <form>
+            <div class="form-row align-items-center">
+                <div class="col-auto">
+                    <input type="number" class="form-control" placeholder="Enter amount">
+                </div>
+                <div class="col-auto">
+                    <select id='from' class="form-control">
+                        <option value="1">Cubic Centimetre/s [cm3]</option>
+                        <option value="2">Cubic Decimetre/s [dm2]</option>
+                        <option value="3">Cubic Metre/s [m3]</option>
+                        <option value="4">Litre/s [l]</option>
+                        <option value="5">Hectolitre/s [hl]</option>
+                        <option value="6">Cubic Inch/s [in3]</option>
+                        <option value="7">Cubic Feet [ft3]</option>
+                        <option value="8">Fluid Ounce/s [fl oz]</option>
+                        <option value="9">Pint/s [pt]</option>
+                        <option value="10">Gallon/s [gal]</option>
+                        <option value="11">US Fluid Ounce/s [US fl oz]</option>
+                        <option value="12">US Pint/s [US pt]</option>
+                        <option value="13">US Gallon/s [US gal]</option>
+                    </select>
+
+                </div>
+
+                <div class="col-auto" for='to'>
+                    <select class="form-control">
+                        <option value="1">Cubic Centimetre/s [cm3]</option>
+                        <option value="2">Cubic Decimetre/s [dm2]</option>
+                        <option value="3">Cubic Metre/s [m3]</option>
+                        <option value="4">Litre/s [l]</option>
+                        <option value="5">Hectolitre/s [hl]</option>
+                        <option value="6">Cubic Inch/s [in3]</option>
+                        <option value="7">Cubic Feet [ft3]</option>
+                        <option value="8">Fluid Ounce/s [fl oz]</option>
+                        <option value="9">Pint/s [pt]</option>
+                        <option value="10">Gallon/s [gal]</option>
+                        <option value="11">US Fluid Ounce/s [US fl oz]</option>
+                        <option value="12">US Pint/s [US pt]</option>
+                        <option value="13">US Gallon/s [US gal]</option>
+                    </select>
+
+                </div>
+
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
     </div>
     <div id="Weight" class="tabcontent">
         <h3>Weight</h3>
+        <form>
+            <div class="form-row align-items-center">
+                <div class="col-auto">
+                    <input type="number" class="form-control" placeholder="Enter amount">
+                </div>
+                <div class="col-auto">
+                    <select id='from' class="form-control">
+                        <option value="1">Milligram/s [mg]</option>
+                        <option value="2">Gram/s [g]</option>
+                        <option value="3">Kilogram/s [kg]</option>
+                        <option value="4">Tonne/s [t]</option>
+                        <option value="5">Ounce/s [oz]</option>
+                        <option value="6">Pound/s [lb]</option>
+                        <option value="7">Stone/s [s]</option>
+                        <option value="8">UK Hundred Weight [cwt]</option>
+                        <option value="9">UK Long Ton [ton]</option>
+                    </select>
+
+                </div>
+
+                <div class="col-auto" for='to'>
+                    <select class="form-control">
+                        <option value="1">Milligram/s [mg]</option>
+                        <option value="2">Gram/s [g]</option>
+                        <option value="3">Kilogram/s [kg]</option>
+                        <option value="4">Tonne/s [t]</option>
+                        <option value="5">Ounce/s [oz]</option>
+                        <option value="6">Pound/s [lb]</option>
+                        <option value="7">Stone/s [s]</option>
+                        <option value="8">UK Hundred Weight [cwt]</option>
+                        <option value="9">UK Long Ton [ton]</option>
+                    </select>
+
+                </div>
+
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
     </div>
 </body>
+
 <script src="/public/client.js"></script>
 
 

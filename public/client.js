@@ -1,6 +1,7 @@
 $(document).ready(function () {
   $("#Length").show();
   $("#def").addClass("active");
+  $("#ratesTable").hide();
 
   openTab = function (evt, cityName) {
     $("#def").removeClass("active");
@@ -17,6 +18,11 @@ $(document).ready(function () {
   };
 
   $("#rates").click(function () {
+    if ($("#rates").text() === "+") {
+      $("#rates").text("-");
+    } else {
+      $("#rates").text("+");
+    }
     $("#ratesTable").toggle((speed = "slow"));
   });
   $("form").on("submit", function (event) {

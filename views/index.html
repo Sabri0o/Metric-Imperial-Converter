@@ -25,18 +25,51 @@
 
     <!-- Tab content -->
     <div id="Length" class="tabcontent">
-        <h3>Length</h3>
+        <h3>Length Conversion rates</h3>
+
+        <div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th colspan="2">Metric</th>
+                        <th>Imperial</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="2">1 millimetre [mm]</td>
+                        <td>0.03937 in</td>
+                    </tr>
+                    <tr>
+                        <td>1 centimetre [cm]</td>
+                        <td>10 mm</td>
+                        <td>0.3937 in</td>
+                    </tr>
+                    <tr>
+                        <td>1 metre [m]</td>
+                        <td>100 cm</td>
+                        <td>1.0936 yd</td>
+                    </tr>
+                    <tr>
+                        <td>1 kilometre [km]</td>
+                        <td>1000 m</td>
+                        <td>0.6214 mile</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <hr />
         <form id='lengthConverter'>
             <div class="form-row align-items-center">
                 <div class="col-auto">
-                    <input name='amount' type="text" class="form-control" placeholder="Enter amount">
+                    <input name='amount' type="number" step=0.01 class="form-control" placeholder="Enter amount">
                 </div>
                 <div class="col-auto">
                     <select name='from' id='from' class="form-control">
+                        <option value="km">Kilometre/s [km]</option>
                         <option value="mm">Millimetre/s [mm]</option>
                         <option value="cm">Centimetre/s [cm]</option>
                         <option value="m">Metre/s [m]</option>
-                        <option value="km">Kilometre/s [km]</option>
                         <option value="in">Inch/s [in]</option>
                         <option value="ft">Feet [ft]</option>
                         <option value="yd">Yard/s [yd]</option>
@@ -48,6 +81,7 @@
 
                 <div name='to' class="col-auto" for='to'>
                     <select name='to' class="form-control">
+                        <option value="ml">Mile/s [ml]</option>
                         <option value="mm">Millimetre/s [mm]</option>
                         <option value="cm">Centimetre/s [cm]</option>
                         <option value="m">Metre/s [m]</option>
@@ -55,15 +89,15 @@
                         <option value="in">Inch/s [in]</option>
                         <option value="ft">Feet [ft]</option>
                         <option value="yd">Yard/s [yd]</option>
-                        <option value="ml">Mile/s [ml]</option>
                         <option value="nm">Nautical Mile/s [nm]</option>
                     </select>
 
                 </div>
 
                 <div class="col-auto">
-                    <button  type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Convert Length</button>
                 </div>
+
             </div>
         </form>
     </div>
@@ -85,14 +119,14 @@
 
                 <div name='to' class="col-auto" for='to'>
                     <select name='to' class="form-control">
-                        <option value="c">Celsius [c]</option>
                         <option value="f">Fahrenheit [f]</option>
+                        <option value="c">Celsius [c]</option>
                     </select>
 
                 </div>
 
                 <div class="col-auto">
-                    <button  type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </div>
         </form>
@@ -103,15 +137,15 @@
         <form id='areaConverter'>
             <div class="form-row align-items-center">
                 <div class="col-auto">
-                    <input name='amount'  type="text" class="form-control" placeholder="Enter amount">
+                    <input name='amount' type="text" class="form-control" placeholder="Enter amount">
                 </div>
                 <div class="col-auto">
                     <select name='from' id='from' class="form-control">
+                        <option value="km2">Square Kilometre/s [km2]</option>
                         <option value="mm2">Square Millimetre/s [mm2]</option>
                         <option value="cm2">Square Centimetre/s [cm2]</option>
                         <option value="m2">Square Metre/s [m2]</option>
                         <option value="ha">Hectare/s [ha]</option>
-                        <option value="km2">Square Kilometre/s [km2]</option>
                         <option value="in2">Square Inch/s [in2]</option>
                         <option value="sq ft">Square Feet [sq ft]</option>
                         <option value="yd2">Square Yard/s [yd2]</option>
@@ -122,7 +156,8 @@
                 </div>
 
                 <div class="col-auto" for='to'>
-                    <select name='to'  class="form-control">
+                    <select name='to' class="form-control">
+                        <option value="ml2">Square Mile/s [ml2]</option>
                         <option value="mm2">Square Millimetre/s [mm2]</option>
                         <option value="cm2">Square Centimetre/s [cm2]</option>
                         <option value="m2">Square Metre/s [m2]</option>
@@ -132,7 +167,6 @@
                         <option value="sq ft">Square Feet [sq ft]</option>
                         <option value="yd2">Square Yard/s [yd2]</option>
                         <option value="a">Acre/s [a]</option>
-                        <option value="ml2">Square Mile/s [ml2]</option>
                     </select>
 
                 </div>
@@ -152,11 +186,11 @@
                     <input name='amount' type="text" class="form-control" placeholder="Enter amount">
                 </div>
                 <div class="col-auto">
-                    <select  name='from' id='from' class="form-control">
+                    <select name='from' id='from' class="form-control">
+                        <option value="l">Litre/s [l]</option>
                         <option value="cm3">Cubic Centimetre/s [cm3]</option>
                         <option value="dm2">Cubic Decimetre/s [dm2]</option>
                         <option value="m3">Cubic Metre/s [m3]</option>
-                        <option value="l">Litre/s [l]</option>
                         <option value="5">Hectolitre/s [hl]</option>
                         <option value="hl">Cubic Inch/s [in3]</option>
                         <option value="ft3">Cubic Feet [ft3]</option>
@@ -171,7 +205,8 @@
                 </div>
 
                 <div class="col-auto" for='to'>
-                    <select name='to'  class="form-control">
+                    <select name='to' class="form-control">
+                        <option value="gal">Gallon/s [gal]</option>
                         <option value="cm3">Cubic Centimetre/s [cm3]</option>
                         <option value="dm2">Cubic Decimetre/s [dm2]</option>
                         <option value="m3">Cubic Metre/s [m3]</option>
@@ -181,7 +216,6 @@
                         <option value="ft3">Cubic Feet [ft3]</option>
                         <option value="fl oz">Fluid Ounce/s [fl oz]</option>
                         <option value="pt">Pint/s [pt]</option>
-                        <option value="gal">Gallon/s [gal]</option>
                         <option value="US fl oz">US Fluid Ounce/s [US fl oz]</option>
                         <option value="US pt">US Pint/s [US pt]</option>
                         <option value="US gal">US Gallon/s [US gal]</option>
@@ -200,13 +234,13 @@
         <form id='weightConverter'>
             <div class="form-row align-items-center">
                 <div class="col-auto">
-                    <input name='amount'  type="text" class="form-control" placeholder="Enter amount">
+                    <input name='amount' type="text" class="form-control" placeholder="Enter amount">
                 </div>
                 <div class="col-auto">
-                    <select name='from'  id='from' class="form-control">
+                    <select name='from' id='from' class="form-control">
+                        <option value="kg">Kilogram/s [kg]</option>
                         <option value="mg">Milligram/s [mg]</option>
                         <option value="g">Gram/s [g]</option>
-                        <option value="kg">Kilogram/s [kg]</option>
                         <option value="t">Tonne/s [t]</option>
                         <option value="oz">Ounce/s [oz]</option>
                         <option value="lb">Pound/s [lb]</option>
@@ -218,13 +252,13 @@
                 </div>
 
                 <div class="col-auto" for='to'>
-                    <select name='to'  class="form-control">
+                    <select name='to' class="form-control">
+                        <option value="lb">Pound/s [lb]</option>
                         <option value="mg">Milligram/s [mg]</option>
                         <option value="g">Gram/s [g]</option>
                         <option value="kg">Kilogram/s [kg]</option>
                         <option value="t">Tonne/s [t]</option>
                         <option value="oz">Ounce/s [oz]</option>
-                        <option value="lb">Pound/s [lb]</option>
                         <option value="s">Stone/s [s]</option>
                         <option value="cwt">UK Hundred Weight [cwt]</option>
                         <option value="ton">UK Long Ton [ton]</option>

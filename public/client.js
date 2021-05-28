@@ -16,13 +16,16 @@ $(document).ready(function () {
     evt.target.className += " active";
   };
 
+  $("#rates").click(function () {
+    $("#ratesTable").toggle((speed = "slow"));
+  });
   $("form").on("submit", function (event) {
     event.preventDefault();
     console.log($(this).serialize());
     $.get("/api/convert", $(this).serialize(), function (result) {
       console.log(result);
       $("#result").text(result.string || "invalid number");
-      $("#result").css("background-color", 'rgb(103, 224, 228)');
+      $("#result").css("background-color", "rgb(103, 224, 228)");
     });
   });
 

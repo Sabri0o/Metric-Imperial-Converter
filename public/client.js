@@ -16,14 +16,12 @@ $(document).ready(function () {
     evt.target.className += " active";
   };
 
-  // $('#lengthConverter').submit(function(evt){
-  //   evt.preventDefault()
-  //   console.log($('#lengthConverter').serialize())
-  // })
-
   $( "form" ).on( "submit", function( event ) {
     event.preventDefault();
     console.log( $( this ).serialize() );
+    $.get('/api/convert',$( this ).serialize(),function(result){
+      console.log(result)
+    })
   });
 
   console.log("ready!");

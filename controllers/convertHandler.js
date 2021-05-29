@@ -1,3 +1,4 @@
+const conversionRates = require('../conversionRates')
 function ConvertHandler() {
   this.getNum = function (input) {
     if (input !== undefined) {
@@ -88,38 +89,48 @@ function ConvertHandler() {
     return result;
   };
 
-  this.convert = function (initNum, initUnit) {
-    const galToL = 3.78541;
-    const lbsToKg = 0.453592;
-    const miToKm = 1.60934;
+  this.convert = function (initNum, initUnit, returnUnit) {
+    
     let result;
-    switch (initUnit) {
-      case "gal":
-        result = initNum * galToL;
-        break;
-      case "lbs":
-        result = initNum * lbsToKg;
-        break;
-      case "mi":
-        result = initNum * miToKm;
-        break;
-      case "L":
-      case "l":
-        result = initNum / galToL;
-        break;
-      case "kg":
-        result = initNum / lbsToKg;
-        break;
-      case "km":
-        result = initNum / miToKm;
-        break;
-      default:
-        result = false;
+    if (["c", "f", "k"].includes(initUnit)) {
+      console.log(conversionRates[initUnit][returnUnit](Number(initNum)))      
+      result = conversionRates[initUnit][returnUnit](Number(initNum));
+    } else {
+      console.log(initNum * conversionRates[initUnit][returnUnit]);
+      result = initNum * conversionRates[initUnit][returnUnit];
     }
+    // const galToL = 3.78541;
+    // const lbsToKg = 0.453592;
+    // const miToKm = 1.60934;
+    // let result;
+    // switch (initUnit) {
+    //   case "gal":
+    //     result = initNum * galToL;
+    //     break;
+    //   case "lbs":
+    //     result = initNum * lbsToKg;
+    //     break;
+    //   case "mi":
+    //     result = initNum * miToKm;
+    //     break;
+    //   case "L":
+    //   case "l":
+    //     result = initNum / galToL;
+    //     break;
+    //   case "kg":
+    //     result = initNum / lbsToKg;
+    //     break;
+    //   case "km":
+    //     result = initNum / miToKm;
+    //     break;
+    //   default:
+    //     result = false;
+    // }
     return result;
   };
 
   this.getString = function (initNum, initUnit, returnNum, returnUnit) {
+    console.log(returnNum)
     let precReturnNum = returnUnit ? returnNum.toFixed(5) : returnNum;
     let result;
     switch (initUnit) {

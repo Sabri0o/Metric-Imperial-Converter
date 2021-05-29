@@ -8,7 +8,7 @@ module.exports = function (app) {
     let initNum = convertHandler.getNum(req.query.input) || req.query.amount
     let initUnit = convertHandler.getUnit(req.query.input) || req.query.from
     let returnUnit = convertHandler.getReturnUnit(req.query.input) || req.query.to
-    let returnNum = convertHandler.convert(initNum,initUnit)
+    let returnNum = convertHandler.convert(initNum,initUnit,returnUnit)
     let getString = convertHandler.getString(initNum,initUnit,returnNum,returnUnit)
     if(!initNum && !returnUnit){
       res.send("invalid number and unit")

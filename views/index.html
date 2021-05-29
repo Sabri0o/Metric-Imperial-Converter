@@ -25,12 +25,12 @@
 
     <!-- Tab content -->
     <div id="Length" class="tabcontent">
-        <div id='header'>
+        <div class='header'>
             <h2>Length Conversion rates</h2>
-            <button id='rates'>+</button>
+            <button class='rates'>+</button>
         </div>
 
-        <div id='ratesTable'>
+        <div class='ratesTable'>
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -102,11 +102,14 @@
 
             </div>
         </form>
-        <div id='result'></div>
+        <div class='result'></div>
     </div>
 
     <div id="Temperature" class="tabcontent">
-        <h3>Temperature</h3>
+        <div class='header'>
+            <h3>Temperature</h3>
+            <button class='rates'>+</button>
+        </div>
         <form id='temperatureConverter'>
             <div class="form-row align-items-center">
                 <div class="col-auto">
@@ -138,7 +141,10 @@
     </div>
 
     <div id="Area" class="tabcontent">
-        <h3>Area</h3>
+        <div class='header'>
+            <h3>Area</h3>
+            <button class='rates'>+</button>
+        </div>
         <form id='areaConverter'>
             <div class="form-row align-items-center">
                 <div class="col-auto">
@@ -180,7 +186,10 @@
     </div>
 
     <div id="Volume" class="tabcontent">
-        <h3>Volume</h3>
+        <div class='header'>
+            <h3>Volume</h3>
+            <button class='rates'>+</button>
+        </div>
         <form id='volumeConverter'>
             <div class="form-row align-items-center">
                 <div class="col-auto">
@@ -221,7 +230,41 @@
         </form>
     </div>
     <div id="Weight" class="tabcontent">
-        <h3>Weight</h3>
+        <div class='header'>
+            <h3>Weight</h3>
+            <button class='rates'>+</button>
+        </div>
+        <div class='ratesTable'>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th colspan="2">Metric</th>
+                        <th>Imperial</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="2">1 milligram [mg]</td>
+                        <td>0.0154 grain</td>
+                    </tr>
+                    <tr>
+                        <td>1 gram [g]</td>
+                        <td>1000 mg</td>
+                        <td>0.0353 oz</td>
+                    </tr>
+                    <tr>
+                        <td>1 kilogram [kg]</td>
+                        <td>1000 g</td>
+                        <td>2.2046 lb</td>
+                    </tr>
+                    <tr>
+                        <td>1 tonne [t]</td>
+                        <td>1000 kg</td>
+                        <td>1.1023 short ton</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
         <form id='weightConverter'>
             <div class="form-row align-items-center">
                 <div class="col-auto">

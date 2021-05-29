@@ -47,7 +47,7 @@
   flex: 50%;
 }
 
-#result {
+.result {
   display: flex;
   justify-content: left;
   align-items: center;
@@ -58,12 +58,12 @@
   font-size: 20px;
 }
 
-#header {
+.header {
   display: flex;
   justify-content: space-between;
 }
 
-#rates {
+.rates {
   height: 35px;
   width: 35px;
   border-radius: 5px;

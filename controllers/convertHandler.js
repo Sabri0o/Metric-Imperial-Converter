@@ -1,4 +1,4 @@
-const conversionRates = require('../conversionRates')
+const { conversionRates, spellUnit } = require("../conversionRates");
 function ConvertHandler() {
   this.getNum = function (input) {
     if (input !== undefined) {
@@ -30,7 +30,6 @@ function ConvertHandler() {
 
   this.getReturnUnit = function (initUnit) {
     if (initUnit !== undefined) {
-      console.log("initUnit", initUnit);
       let result;
       switch (this.getUnit(initUnit.toLowerCase())) {
         case "gal":
@@ -61,97 +60,94 @@ function ConvertHandler() {
     }
   };
 
-  this.spellOutUnit = function (unit) {
-    let result;
-    switch (unit) {
-      case "gal":
-        result = "gallons";
-        break;
-      case "lbs":
-        result = "pounds";
-        break;
-      case "mi":
-        result = "miles";
-        break;
-      case "L":
-      case "l":
-        result = "liters";
-        break;
-      case "kg":
-        result = "kilograms";
-        break;
-      case "km":
-        result = "kilometers";
-        break;
-      default:
-        result = false;
-    }
-    return result;
-  };
+  // this.spellOutUnit = function (unit) {
+  //   let result;
+  //   switch (unit) {
+  //     case "gal":
+  //       result = "gallons";
+  //       break;
+  //     case "lbs":
+  //       result = "pounds";
+  //       break;
+  //     case "mi":
+  //       result = "miles";
+  //       break;
+  //     case "L":
+  //     case "l":
+  //       result = "liters";
+  //       break;
+  //     case "kg":
+  //       result = "kilograms";
+  //       break;
+  //     case "km":
+  //       result = "kilometers";
+  //       break;
+  //     default:
+  //       result = false;
+  //   }
+  //   return result;
+  // };
 
   this.convert = function (initNum, initUnit, returnUnit) {
-    
     let result;
-    if (["c", "f", "k"].includes(initUnit)) {
-      console.log(conversionRates[initUnit][returnUnit](Number(initNum)))      
+    if (["°C", "°F", "k"].includes(initUnit)) {
       result = conversionRates[initUnit][returnUnit](Number(initNum));
     } else {
-      console.log(initNum * conversionRates[initUnit][returnUnit]);
       result = initNum * conversionRates[initUnit][returnUnit];
     }
     return result;
   };
 
   this.getString = function (initNum, initUnit, returnNum, returnUnit) {
-    console.log(returnNum)
     let precReturnNum = returnUnit ? returnNum.toFixed(5) : returnNum;
     let result;
-    switch (initUnit) {
-      case "gal":
-        result = `${initNum} ${this.spellOutUnit(
-          "gal"
-        )} converts to ${precReturnNum} ${this.spellOutUnit(
-          this.getReturnUnit("gal")
-        )}`;
-        break;
-      case "lbs":
-        result = `${initNum} ${this.spellOutUnit(
-          "lbs"
-        )} converts to ${precReturnNum} ${this.spellOutUnit(
-          this.getReturnUnit("lbs")
-        )}`;
-        break;
-      case "mi":
-        result = `${initNum} ${this.spellOutUnit(
-          "mi"
-        )} converts to ${precReturnNum} ${this.spellOutUnit(
-          this.getReturnUnit("mi")
-        )}`;
-        break;
-      case "L":
-        result = `${initNum} ${this.spellOutUnit(
-          "L"
-        )} converts to ${precReturnNum} ${this.spellOutUnit(
-          this.getReturnUnit("L")
-        )}`;
-        break;
-      case "kg":
-        result = `${initNum} ${this.spellOutUnit(
-          "kg"
-        )} converts to ${precReturnNum} ${this.spellOutUnit(
-          this.getReturnUnit("kg")
-        )}`;
-        break;
-      case "km":
-        result = `${initNum} ${this.spellOutUnit(
-          "km"
-        )} converts to ${precReturnNum} ${this.spellOutUnit(
-          this.getReturnUnit("km")
-        )}`;
-        break;
-      default:
-        result = false;
-    }
+    result = `${initNum} ${spellUnit[initUnit]} converts to ${precReturnNum} ${spellUnit[returnUnit]}}`;
+    // switch (initUnit) {
+    //   case "gal":
+    //     result = `${initNum} ${this.spellOutUnit(
+    //       "gal"
+    //     )} converts to ${precReturnNum} ${this.spellOutUnit(
+    //       this.getReturnUnit("gal")
+    //     )}`;
+    //     break;
+    //   case "lbs":
+    //     result = `${initNum} ${this.spellOutUnit(
+    //       "lbs"
+    //     )} converts to ${precReturnNum} ${this.spellOutUnit(
+    //       this.getReturnUnit("lbs")
+    //     )}`;
+    //     break;
+    //   case "mi":
+    //     result = `${initNum} ${this.spellOutUnit(
+    //       "mi"
+    //     )} converts to ${precReturnNum} ${this.spellOutUnit(
+    //       this.getReturnUnit("mi")
+    //     )}`;
+    //     break;
+    //   case "L":
+    //     result = `${initNum} ${this.spellOutUnit(
+    //       "L"
+    //     )} converts to ${precReturnNum} ${this.spellOutUnit(
+    //       this.getReturnUnit("L")
+    //     )}`;
+    //     break;
+    //   case "kg":
+    //     result = `${initNum} ${this.spellOutUnit(
+    //       "kg"
+    //     )} converts to ${precReturnNum} ${this.spellOutUnit(
+    //       this.getReturnUnit("kg")
+    //     )}`;
+    //     break;
+    //   case "km":
+    //     result = `${initNum} ${this.spellOutUnit(
+    //       "km"
+    //     )} converts to ${precReturnNum} ${this.spellOutUnit(
+    //       this.getReturnUnit("km")
+    //     )}`;
+    //     break;
+    //   default:
+    //     result = false;
+    // }
     return result;
   };
 }

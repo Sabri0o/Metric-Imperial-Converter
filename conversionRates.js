@@ -1,4 +1,4 @@
-module.exports = {
+const conversionRates = {
   km: {
     km: 1,
     ml: 0.621371,
@@ -98,29 +98,29 @@ module.exports = {
     in: 72913.4,
     nm: 1,
   },
-  c: {
-    c: 1,
-    f: (a) => {
+  '°C': {
+    '°C': 1,
+    '°F': (a) => {
       return (a * 9) / 5 + 32;
     },
     k: (a) => {
       return a + 273.15;
     },
   },
-  f: {
-    c: (a) => {
+  '°F': {
+    '°C': (a) => {
       return ((a - 32) * 5) / 9;
     },
-    f: 1,
+    '°F': 1,
     k: (a) => {
       return ((a - 32) * 5) / 9 + 273.15;
     },
   },
   k: {
-    c: (a) => {
+    '°C': (a) => {
       return a - 273.15;
     },
-    f: (a) => {
+    '°F': (a) => {
       return ((a - 273.15) * 9) / 5 + 32;
     },
     k: 1,
@@ -360,3 +360,43 @@ module.exports = {
     s: 1,
   },
 };
+
+const spellUnit = {
+  km: "kilometre/s",
+  mm: "millimetre/s",
+  cm: "centimetre/s",
+  m: "metre/s",
+  in: "inch/s",
+  ft: "feet/s",
+  yd: "yard/s",
+  ml: "mile/s",
+  nm: "nautical mile",
+  "°F": "Fahrenheit",
+  "°C": "Celsius",
+  K: "kelvin",
+  km2: "square kilometre/s",
+  m2: "square metre/s",
+  ml2: "square mile/s",
+  yd2: "square yard/s",
+  "sq ft": "square feet",
+  in2: "square inch/s",
+  ha: "hectare/s",
+  a: "acre/s",
+  l: "litre/s",
+  m3: "cubic metre/s",
+  in3: "cubic inch/s",
+  ft3: "cubic feet",
+  "fl oz": "fluid ounce/s",
+  pt: "pint/s",
+  gal: "gallon/s",
+  mll: "millilitre",
+  kg: "kilogram/s",
+  mg: "milligram/s",
+  g: "gram/s",
+  t: "tonne/s",
+  oz: "ounce/s",
+  lb: "pound/s",
+  s: "stone/s",
+};
+module.exports.conversionRates = conversionRates;
+module.exports.spellUnit = spellUnit;

@@ -102,7 +102,7 @@
 
             </div>
         </form>
-        <div class='result'></div>
+        <div class='result lengthConverter'></div>
     </div>
 
     <div id="Temperature" class="tabcontent">
@@ -116,9 +116,9 @@
                     <tr>
                         <th></th>
 
-                        <th>Celsius</th>
-                        <th>Fahrenheit</th>
-                        <th>Kelvin</th>
+                        <th>Celsius [°C]</th>
+                        <th>Fahrenheit [°F]</th>
+                        <th>Kelvin [K]</th>
 
                     </tr>
                 </thead>
@@ -153,12 +153,12 @@
         <form id='temperatureConverter'>
             <div class="form-row align-items-center">
                 <div class="col-auto">
-                    <input name='amount' type="text" class="form-control" placeholder="Enter amount">
+                    <input name='amount' type="number" step=0.01 class="form-control" placeholder="Enter amount">
                 </div>
                 <div class="col-auto">
                     <select name='from' id='from' class="form-control">
-                        <option value="c">Celsius [c]</option>
-                        <option value="f">Fahrenheit [f]</option>
+                        <option value="°C">Celsius [c]</option>
+                        <option value="°F">Fahrenheit [f]</option>
                         <option value="k">Kelvin [k]</option>
                     </select>
 
@@ -166,8 +166,8 @@
 
                 <div name='to' class="col-auto" for='to'>
                     <select name='to' class="form-control">
-                        <option value="f">Fahrenheit [f]</option>
-                        <option value="c">Celsius [c]</option>
+                        <option value="°F">Fahrenheit [f]</option>
+                        <option value="°C">Celsius [c]</option>
                         <option value="k">Kelvin [k]</option>
                     </select>
 
@@ -178,6 +178,7 @@
                 </div>
             </div>
         </form>
+        <div class='result temperatureConverter'></div>
     </div>
 
     <div id="Area" class="tabcontent">
@@ -220,7 +221,7 @@
         <form id='areaConverter'>
             <div class="form-row align-items-center">
                 <div class="col-auto">
-                    <input name='amount' type="text" class="form-control" placeholder="Enter amount">
+                    <input name='amount' type="number" step=0.01 class="form-control" placeholder="Enter amount">
                 </div>
                 <div class="col-auto">
                     <select name='from' id='from' class="form-control">
@@ -255,7 +256,7 @@
                 </div>
             </div>
         </form>
-        <div class='result'></div>
+        <div class='result areaConverter'></div>
     </div>
 
     <div id="Volume" class="tabcontent">
@@ -297,13 +298,13 @@
         <form id='volumeConverter'>
             <div class="form-row align-items-center">
                 <div class="col-auto">
-                    <input name='amount' type="text" class="form-control" placeholder="Enter amount">
+                    <input name='amount' type="number" step=0.01 class="form-control" placeholder="Enter amount">
                 </div>
                 <div class="col-auto">
                     <select name='from' id='from' class="form-control">
                         <option value="l">Litre/s [l]</option>
                         <option value="m3">Cubic Metre/s [m3]</option>
-                        <option value="hl">Cubic Inch/s [in3]</option>
+                        <option value="in3">Cubic Inch/s [in3]</option>
                         <option value="ft3">Cubic Feet [ft3]</option>
                         <option value="fl oz">Fluid Ounce/s [fl oz]</option>
                         <option value="pt">Pint/s [pt]</option>
@@ -315,13 +316,13 @@
 
                 <div class="col-auto" for='to'>
                     <select name='to' class="form-control">
+                        <option value="gal">Gallon/s [gal]</option>
                         <option value="l">Litre/s [l]</option>
                         <option value="m3">Cubic Metre/s [m3]</option>
                         <option value="hl">Cubic Inch/s [in3]</option>
                         <option value="ft3">Cubic Feet [ft3]</option>
                         <option value="fl oz">Fluid Ounce/s [fl oz]</option>
                         <option value="pt">Pint/s [pt]</option>
-                        <option value="gal">Gallon/s [gal]</option>
                         <option value="mll">Millilitre [ml]</option>
                     </select>
 
@@ -332,7 +333,7 @@
                 </div>
             </div>
         </form>
-        <div class='result'></div>
+        <div class='result volumeConverter'></div>
     </div>
     <div id="Weight" class="tabcontent">
         <div class='header'>
@@ -404,7 +405,7 @@
         <form id='weightConverter'>
             <div class="form-row align-items-center">
                 <div class="col-auto">
-                    <input name='amount' type="text" class="form-control" placeholder="Enter amount">
+                    <input name='amount' type="number" step=0.01 class="form-control" placeholder="Enter amount">
                 </div>
                 <div class="col-auto">
                     <select name='from' id='from' class="form-control">
@@ -437,7 +438,7 @@
                 </div>
             </div>
         </form>
-        <div class='result'></div>
+        <div class='result weightConverter'></div>
     </div>
 </body>
 

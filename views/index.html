@@ -110,6 +110,46 @@
             <h3>Temperature</h3>
             <button class='rates' id='temperatureRates' onclick="toggle(event)">+</button>
         </div>
+        <div class='ratesTable temperatureRates'>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th></th>
+
+                        <th>Celsius</th>
+                        <th>Fahrenheit</th>
+                        <th>Kelvin</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Celsius</th>
+
+                        <td>24°C</td>
+                        <td>(24°C × 9/5) + 32 = 75.2°F </td>
+                        <td>24°C + 273.15 = 297.15K </td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">Fahrenheit</th>
+
+                        <td>(80°F − 32) × 5/9 = 26.667°C</td>
+                        <td>80°F</td>
+                        <td>(80°F − 32) × 5/9 + 273.15 = 299.817K</td>
+                    </tr>
+                    <tr>
+
+                        <th scope="row">Kelvin</th>
+
+                        <td>300K − 273.15 = 26.85°C</td>
+                        <td>(300K − 273.15) × 9/5 + 32 = 80.33°F</td>
+                        <td>300K</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
         <form id='temperatureConverter'>
             <div class="form-row align-items-center">
                 <div class="col-auto">
@@ -144,6 +184,38 @@
         <div class='header'>
             <h3>Area</h3>
             <button class='rates' id='areaRates' onclick="toggle(event)">+</button>
+        </div>
+        <div class='ratesTable areaRates'>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th colspan="2">Metric</th>
+                        <th>Imperial</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1 sq cm [cm2]</td>
+                        <td>100 mm2 </td>
+                        <td>0.1550 in2</td>
+                    </tr>
+                    <tr>
+                        <td>1 sq m [m2] </td>
+                        <td>10000 cm2 </td>
+                        <td>1.1960 yd2 </td>
+                    </tr>
+                    <tr>
+                        <td>1 hectare [ha]</td>
+                        <td>10000 m2</td>
+                        <td>2.4711 acre</td>
+                    </tr>
+                    <tr>
+                        <td>1 sq km [km2]</td>
+                        <td>1100 ha</td>
+                        <td>0.3861 mile2</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         <form id='areaConverter'>
             <div class="form-row align-items-center">
@@ -190,6 +262,37 @@
             <h3>Volume</h3>
             <button class='rates' id='volumeRates' onclick="toggle(event)">+</button>
         </div>
+        <div class='ratesTable volumeRates'>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th colspan="2">Imperial</th>
+                        <th>Metric</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1 cu foot [ft3]</td>
+                        <td>1728 in3</td>
+                        <td>0.0283 m3</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">1 fluid ounce [fl oz]</td>
+                        <td>28.413 ml</td>
+                    </tr>
+                    <tr>
+                        <td>1 pint [pt]</td>
+                        <td>20 fl oz</td>
+                        <td>0.5683 L</td>
+                    </tr>
+                    <tr>
+                        <td>1 gallon [gal]</td>
+                        <td>8 pt</td>
+                        <td>4.5461 L</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
         <form id='volumeConverter'>
             <div class="form-row align-items-center">
                 <div class="col-auto">
@@ -233,6 +336,37 @@
         <div class='header'>
             <h3>Weight</h3>
             <button class='rates' id='weightRates' onclick="toggle(event)">+</button>
+        </div>
+        <div class='ratesTable volumeRates'>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th colspan="2">Imperial</th>
+                        <th>Metric</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1 cu foot [ft3]</td>
+                        <td>1728 in3</td>
+                        <td>0.0283 m3</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">1 fluid ounce [fl oz]</td>
+                        <td>28.413 ml</td>
+                    </tr>
+                    <tr>
+                        <td>1 pint [pt]</td>
+                        <td>20 fl oz</td>
+                        <td>0.5683 L</td>
+                    </tr>
+                    <tr>
+                        <td>1 gallon [gal]</td>
+                        <td>8 pt</td>
+                        <td>4.5461 L</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         <div class='ratesTable weightRates'>
             <table class="table table-striped">

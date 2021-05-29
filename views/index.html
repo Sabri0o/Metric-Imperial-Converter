@@ -27,10 +27,10 @@
     <div id="Length" class="tabcontent">
         <div class='header'>
             <h2>Length Conversion rates</h2>
-            <button class='rates'>+</button>
+            <button class='rates' id='lengthRates' onclick="toggle(event)">+</button>
         </div>
 
-        <div class='ratesTable'>
+        <div class='ratesTable lengthRates'>
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -108,7 +108,7 @@
     <div id="Temperature" class="tabcontent">
         <div class='header'>
             <h3>Temperature</h3>
-            <button class='rates'>+</button>
+            <button class='rates' id='temperatureRates' onclick="toggle(event)">+</button>
         </div>
         <form id='temperatureConverter'>
             <div class="form-row align-items-center">
@@ -143,7 +143,7 @@
     <div id="Area" class="tabcontent">
         <div class='header'>
             <h3>Area</h3>
-            <button class='rates'>+</button>
+            <button class='rates' id='areaRates' onclick="toggle(event)">+</button>
         </div>
         <form id='areaConverter'>
             <div class="form-row align-items-center">
@@ -188,7 +188,7 @@
     <div id="Volume" class="tabcontent">
         <div class='header'>
             <h3>Volume</h3>
-            <button class='rates'>+</button>
+            <button class='rates' id='volumeRates' onclick="toggle(event)">+</button>
         </div>
         <form id='volumeConverter'>
             <div class="form-row align-items-center">
@@ -232,9 +232,9 @@
     <div id="Weight" class="tabcontent">
         <div class='header'>
             <h3>Weight</h3>
-            <button class='rates'>+</button>
+            <button class='rates' id='weightRates' onclick="toggle(event)">+</button>
         </div>
-        <div class='ratesTable'>
+        <div class='ratesTable weightRates'>
             <table class="table table-striped">
                 <thead>
                     <tr>

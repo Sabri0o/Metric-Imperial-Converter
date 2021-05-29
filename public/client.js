@@ -1,7 +1,7 @@
 $(document).ready(function () {
   $("#Length").show();
   $("#def").addClass("active");
-  $("#ratesTable").hide();
+  $(".ratesTable").hide();
 
   openTab = function (evt, cityName) {
     $("#def").removeClass("active");
@@ -17,15 +17,17 @@ $(document).ready(function () {
     evt.target.className += " active";
   };
 
-  $(".rates").click(function () {
-    if ($(".rates").text() === "+") {
-      $(".rates").text("-");
+  // toggle the rates table
+  toggle = function (event) {
+    if ($(`#${event.target.id}`).text() === "+") {
+      $(`#${event.target.id}`).text("-");
     } else {
-      $(".rates").text("+");
+      $(`#${event.target.id}`).text("+");
     }
-    $(".ratesTable").toggle((speed = "slow"));
-  });
+    $(`.ratesTable.${event.target.id}`).toggle((speed = "slow"));
+  };
 
+  // serialize the form
   $("form").on("submit", function (event) {
     event.preventDefault();
     console.log($(this).serialize());

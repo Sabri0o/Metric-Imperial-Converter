@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/public/style.css">
-    <title>Document</title>
+    <title>Metric Imperial Converter</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -16,17 +16,17 @@
     <!-- Tab links -->
     <div class="tab">
         <button id='def' class="tablinks" onclick="openTab(event, 'Length')">Length</button>
-        <button class="tablinks" onclick="openTab(event, 'Temperature')">Temperature</button>
-        <button class="tablinks" onclick="openTab(event, 'Area')">Area</button>
-        <button class="tablinks" onclick="openTab(event, 'Volume')">Volume</button>
         <button class="tablinks" onclick="openTab(event, 'Weight')">Weight</button>
+        <button class="tablinks" onclick="openTab(event, 'Volume')">Volume</button>
+        <button class="tablinks" onclick="openTab(event, 'Area')">Area</button>
+        <button class="tablinks" onclick="openTab(event, 'Temperature')">Temperature</button>
 
     </div>
 
     <!-- Tab content -->
     <div id="Length" class="tabcontent">
         <div class='header'>
-            <h2>Length Conversion rates</h2>
+            <h5>Length Conversion rates</h5>
             <button class='rates' id='lengthRates' onclick="toggle(event)">+</button>
         </div>
 
@@ -107,7 +107,7 @@
 
     <div id="Temperature" class="tabcontent">
         <div class='header'>
-            <h3>Temperature</h3>
+            <h5>Temperature Conversion rates</h5>
             <button class='rates' id='temperatureRates' onclick="toggle(event)">+</button>
         </div>
         <div class='ratesTable temperatureRates'>
@@ -182,7 +182,7 @@
 
     <div id="Area" class="tabcontent">
         <div class='header'>
-            <h3>Area</h3>
+            <h5>Area Conversion rates</h5>
             <button class='rates' id='areaRates' onclick="toggle(event)">+</button>
         </div>
         <div class='ratesTable areaRates'>
@@ -251,15 +251,16 @@
                 </div>
 
                 <div class="col-auto">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Convert area</button>
                 </div>
             </div>
         </form>
+        <div class='result'></div>
     </div>
 
     <div id="Volume" class="tabcontent">
         <div class='header'>
-            <h3>Volume</h3>
+            <h5>Volume Conversion rates</h5>
             <button class='rates' id='volumeRates' onclick="toggle(event)">+</button>
         </div>
         <div class='ratesTable volumeRates'>
@@ -327,14 +328,15 @@
                 </div>
 
                 <div class="col-auto">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Convert volume</button>
                 </div>
             </div>
         </form>
+        <div class='result'></div>
     </div>
     <div id="Weight" class="tabcontent">
         <div class='header'>
-            <h3>Weight</h3>
+            <h5>Weight Conversion rates</h5>
             <button class='rates' id='weightRates' onclick="toggle(event)">+</button>
         </div>
         <div class='ratesTable volumeRates'>
@@ -431,10 +433,11 @@
                 </div>
 
                 <div class="col-auto">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Convert weight</button>
                 </div>
             </div>
         </form>
+        <div class='result'></div>
     </div>
 </body>
 

@@ -239,9 +239,9 @@
 
                 <div class="col-auto" for='to'>
                     <select name='to' class="form-control">
+                        <option value="ml2">Square Mile/s [ml2]</option>
                         <option value="km2">Square Kilometre/s [km2]</option>
                         <option value="m2">Square Metre/s [m2]</option>
-                        <option value="ml2">Square Mile/s [ml2]</option>
                         <option value="yd2">Square Yard/s [yd2]</option>
                         <option value="ft2">Square Feet [ft2]</option>
                         <option value="in2">Square Inch/s [in2]</option>
@@ -319,7 +319,7 @@
                         <option value="gal">Gallon/s [gal]</option>
                         <option value="l">Litre/s [l]</option>
                         <option value="m3">Cubic Metre/s [m3]</option>
-                        <option value="hl">Cubic Inch/s [in3]</option>
+                        <option value="in3">Cubic Inch/s [in3]</option>
                         <option value="ft3">Cubic Feet [ft3]</option>
                         <option value="fl oz">Fluid Ounce/s [fl oz]</option>
                         <option value="pt">Pint/s [pt]</option>
@@ -340,37 +340,7 @@
             <h5>Weight Conversion rates</h5>
             <button class='rates' id='weightRates' onclick="toggle(event)">+</button>
         </div>
-        <div class='ratesTable volumeRates'>
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th colspan="2">Imperial</th>
-                        <th>Metric</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1 cu foot [ft3]</td>
-                        <td>1728 in3</td>
-                        <td>0.0283 m3</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">1 fluid ounce [fl oz]</td>
-                        <td>28.413 ml</td>
-                    </tr>
-                    <tr>
-                        <td>1 pint [pt]</td>
-                        <td>20 fl oz</td>
-                        <td>0.5683 L</td>
-                    </tr>
-                    <tr>
-                        <td>1 gallon [gal]</td>
-                        <td>8 pt</td>
-                        <td>4.5461 L</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+
         <div class='ratesTable weightRates'>
             <table class="table table-striped">
                 <thead>
@@ -414,7 +384,7 @@
                         <option value="g">Gram/s [g]</option>
                         <option value="t">Tonne/s [t]</option>
                         <option value="oz">Ounce/s [oz]</option>
-                        <option value="lb">Pound/s [lb]</option>
+                        <option value="lbs">Pound/s [lb]</option>
                         <option value="s">Stone/s [s]</option>
                     </select>
 
@@ -422,12 +392,12 @@
 
                 <div class="col-auto" for='to'>
                     <select name='to' class="form-control">
+                        <option value="lbs">Pound/s [lb]</option>
                         <option value="kg">Kilogram/s [kg]</option>
                         <option value="mg">Milligram/s [mg]</option>
                         <option value="g">Gram/s [g]</option>
                         <option value="t">Tonne/s [t]</option>
                         <option value="oz">Ounce/s [oz]</option>
-                        <option value="lb">Pound/s [lb]</option>
                         <option value="s">Stone/s [s]</option>
                     </select>
 

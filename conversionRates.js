@@ -98,32 +98,38 @@ const conversionRates = {
     in: 72913.4,
     nm: 1,
   },
-  '°C': {
-    '°C': 1,
-    '°F': (a) => {
+  "°C": {
+    "°C": (a) => {
+      return a;
+    },
+    "°F": (a) => {
       return (a * 9) / 5 + 32;
     },
     k: (a) => {
       return a + 273.15;
     },
   },
-  '°F': {
-    '°C': (a) => {
+  "°F": {
+    "°C": (a) => {
       return ((a - 32) * 5) / 9;
     },
-    '°F': 1,
+    "°F": (a) => {
+      return a;
+    },
     k: (a) => {
       return ((a - 32) * 5) / 9 + 273.15;
     },
   },
   k: {
-    '°C': (a) => {
+    "°C": (a) => {
       return a - 273.15;
     },
-    '°F': (a) => {
+    "°F": (a) => {
       return ((a - 273.15) * 9) / 5 + 32;
     },
-    k: 1,
+    k: (a) => {
+      return a;
+    },
   },
 
   km2: {
@@ -369,11 +375,11 @@ const spellUnit = {
   in: "inchs",
   ft: "feets",
   yd: "yards",
-  ml: "miles",
+  mi: "miles",
   nm: "nautical mile",
   "°F": "Fahrenheit",
   "°C": "Celsius",
-  K: "kelvin",
+  k: "kelvin",
   km2: "square kilometre/s",
   m2: "square metre/s",
   ml2: "square mile/s",

@@ -18,6 +18,12 @@ function ConvertHandler() {
     }
   };
 
+  this.spellOutUnit = function(unit) {
+    let result;
+    result = spellUnit[unit]
+    return result;
+  };
+
   this.getUnit = function (input) {
     if (input !== undefined) {
       let regex = RegExp("[a-zA-Z]");
@@ -29,6 +35,7 @@ function ConvertHandler() {
   };
 
   this.getReturnUnit = function (initUnit) {
+    console.log('getReturnUnit',initUnit)
     if (initUnit !== undefined) {
       let result;
       switch (this.getUnit(initUnit.toLowerCase())) {
@@ -60,94 +67,25 @@ function ConvertHandler() {
     }
   };
 
-  // this.spellOutUnit = function (unit) {
-  //   let result;
-  //   switch (unit) {
-  //     case "gal":
-  //       result = "gallons";
-  //       break;
-  //     case "lbs":
-  //       result = "pounds";
-  //       break;
-  //     case "mi":
-  //       result = "miles";
-  //       break;
-  //     case "L":
-  //     case "l":
-  //       result = "liters";
-  //       break;
-  //     case "kg":
-  //       result = "kilograms";
-  //       break;
-  //     case "km":
-  //       result = "kilometers";
-  //       break;
-  //     default:
-  //       result = false;
-  //   }
-  //   return result;
-  // };
-
   this.convert = function (initNum, initUnit, returnUnit) {
+    console.log('initUnit;',initUnit)
+    console.log('this.getReturnUnit(initUnit)',this.getReturnUnit(initUnit))
+    if (this.getReturnUnit(initUnit) === false){
+      return false
+    }
     let result;
     if (["°C", "°F", "k"].includes(initUnit)) {
       result = conversionRates[initUnit][returnUnit](Number(initNum));
     } else {
-      result = initNum * conversionRates[initUnit][returnUnit];
+      result = initNum * conversionRates[initUnit.toLowerCase()][returnUnit.toLowerCase()];
     }
     return result;
   };
 
   this.getString = function (initNum, initUnit, returnNum, returnUnit) {
-    let precReturnNum = returnUnit ? returnNum.toFixed(5) : returnNum;
+    let precReturnNum = returnUnit ? returnNum : returnNum;
     let result;
-    result = `${initNum} ${spellUnit[initUnit]} converts to ${precReturnNum} ${spellUnit[returnUnit]}}`;
-    // switch (initUnit) {
-    //   case "gal":
-    //     result = `${initNum} ${this.spellOutUnit(
-    //       "gal"
-    //     )} converts to ${precReturnNum} ${this.spellOutUnit(
-    //       this.getReturnUnit("gal")
-    //     )}`;
-    //     break;
-    //   case "lbs":
-    //     result = `${initNum} ${this.spellOutUnit(
-    //       "lbs"
-    //     )} converts to ${precReturnNum} ${this.spellOutUnit(
-    //       this.getReturnUnit("lbs")
-    //     )}`;
-    //     break;
-    //   case "mi":
-    //     result = `${initNum} ${this.spellOutUnit(
-    //       "mi"
-    //     )} converts to ${precReturnNum} ${this.spellOutUnit(
-    //       this.getReturnUnit("mi")
-    //     )}`;
-    //     break;
-    //   case "L":
-    //     result = `${initNum} ${this.spellOutUnit(
-    //       "L"
-    //     )} converts to ${precReturnNum} ${this.spellOutUnit(
-    //       this.getReturnUnit("L")
-    //     )}`;
-    //     break;
-    //   case "kg":
-    //     result = `${initNum} ${this.spellOutUnit(
-    //       "kg"
-    //     )} converts to ${precReturnNum} ${this.spellOutUnit(
-    //       this.getReturnUnit("kg")
-    //     )}`;
-    //     break;
-    //   case "km":
-    //     result = `${initNum} ${this.spellOutUnit(
-    //       "km"
-    //     )} converts to ${precReturnNum} ${this.spellOutUnit(
-    //       this.getReturnUnit("km")
-    //     )}`;
-    //     break;
-    //   default:
-    //     result = false;
-    // }
+    result = `${initNum} ${spellUnit[initUnit]} converts to ${Number(precReturnNum).toFixed(5)} ${spellUnit[returnUnit]}`;
     return result;
   };
 }

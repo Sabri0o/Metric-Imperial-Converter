@@ -1,7 +1,7 @@
 const conversionRates = {
   km: {
     km: 1,
-    ml: 0.621371,
+    mi: 0.621371,
     m: 1000,
     cm: 100000,
     mm: 1e6,
@@ -10,9 +10,9 @@ const conversionRates = {
     in: 39370.1,
     nm: 0.5399570950324,
   },
-  ml: {
+  mi: {
     km: 1.60934,
-    ml: 1,
+    mi: 1,
     m: 1609.34,
     cm: 160934,
     mm: 1.609e6,
@@ -23,7 +23,7 @@ const conversionRates = {
   },
   m: {
     km: 0.001,
-    ml: 0.000621371,
+    mi: 0.000621371,
     m: 1,
     cm: 100,
     mm: 1000,
@@ -34,7 +34,7 @@ const conversionRates = {
   },
   cm: {
     km: 1e-5,
-    ml: 6.2137e-6,
+    mi: 6.2137e-6,
     m: 0.01,
     cm: 1,
     mm: 10,
@@ -45,7 +45,7 @@ const conversionRates = {
   },
   mm: {
     km: 1e-6,
-    ml: 6.2137e-7,
+    mi: 6.2137e-7,
     m: 0.001,
     cm: 0.1,
     mm: 10,
@@ -56,7 +56,7 @@ const conversionRates = {
   },
   yd: {
     km: 0.0009144,
-    ml: 0.000568182,
+    mi: 0.000568182,
     m: 0.9144,
     cm: 91.44,
     mm: 914.4,
@@ -67,7 +67,7 @@ const conversionRates = {
   },
   ft: {
     km: 0.0003048,
-    ml: 0.000189394,
+    mi: 0.000189394,
     m: 0.3048,
     cm: 30.48,
     mm: 304.8,
@@ -78,7 +78,7 @@ const conversionRates = {
   },
   in: {
     km: 2.54e-5,
-    ml: 1.5783e-5,
+    mi: 1.5783e-5,
     m: 0.0254,
     cm: 2.54,
     mm: 25.4,
@@ -89,7 +89,7 @@ const conversionRates = {
   },
   nm: {
     km: 1.852,
-    ml: 1.15078,
+    mi: 1.15078,
     m: 1852,
     cm: 185200,
     mm: 1.852e6,
@@ -297,7 +297,7 @@ const conversionRates = {
     g: 1000,
     t: 0.000984207,
     oz: 35.274,
-    lb: 2.20462,
+    lbs: 2.20462,
     s: 0.157473,
   },
 
@@ -307,7 +307,7 @@ const conversionRates = {
     g: 0.001,
     t: 9.8421e-10,
     oz: 3.5274e-5,
-    lb: 2.2046e-6,
+    lbs: 2.2046e-6,
     s: 1.5747e-7,
   },
 
@@ -317,7 +317,7 @@ const conversionRates = {
     g: 1,
     t: 9.8421e-7,
     oz: 0.035274,
-    lb: 0.00220462,
+    lbs: 0.00220462,
     s: 0.000157473,
   },
 
@@ -327,7 +327,7 @@ const conversionRates = {
     g: 1.016e6,
     t: 1,
     oz: 35840,
-    lb: 2240,
+    lbs: 2240,
     s: 160,
   },
 
@@ -337,16 +337,16 @@ const conversionRates = {
     g: 28.3495,
     t: 2.7902e-5,
     oz: 1,
-    lb: 0.0625,
+    lbs: 0.0625,
     s: 0.00446429,
   },
-  lb: {
+  lbs: {
     kg: 0.453592,
     mg: 453592,
     g: 453.592,
     t: 0.000446429,
     oz: 16,
-    lb: 1,
+    lbs: 1,
     s: 0.0714286,
   },
 
@@ -356,20 +356,20 @@ const conversionRates = {
     g: 6350.29,
     t: 0.00625,
     oz: 224,
-    lb: 14,
+    lbs: 14,
     s: 1,
   },
 };
 
 const spellUnit = {
-  km: "kilometre/s",
+  km: "kilometres",
   mm: "millimetre/s",
   cm: "centimetre/s",
   m: "metre/s",
-  in: "inch/s",
-  ft: "feet/s",
-  yd: "yard/s",
-  ml: "mile/s",
+  in: "inchs",
+  ft: "feets",
+  yd: "yards",
+  ml: "miles",
   nm: "nautical mile",
   "°F": "Fahrenheit",
   "°C": "Celsius",
@@ -382,20 +382,21 @@ const spellUnit = {
   in2: "square inch/s",
   ha: "hectare/s",
   a: "acre/s",
-  l: "litre/s",
+  l: "litres",
+  L: "litres",
   m3: "cubic metre/s",
   in3: "cubic inch/s",
   ft3: "cubic feet",
   "fl oz": "fluid ounce/s",
   pt: "pint/s",
-  gal: "gallon/s",
+  gal: "gallons",
   mll: "millilitre",
-  kg: "kilogram/s",
+  kg: "kilograms",
   mg: "milligram/s",
   g: "gram/s",
   t: "tonne/s",
   oz: "ounce/s",
-  lb: "pound/s",
+  lbs: "pounds",
   s: "stone/s",
 };
 module.exports.conversionRates = conversionRates;

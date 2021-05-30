@@ -35,7 +35,7 @@ $(document).ready(function () {
     $.get("/api/convert", $(this).serialize(), function (result) {
       console.log(result);
       $(`.result.${event.target.id}`).text(result.string || "invalid number");
-      $('.result').css("background-color", "rgb(103, 224, 228)");
+      $(`.result.${event.target.id}`).css("background-color", "rgb(103, 224, 228)");
     });
   });
 

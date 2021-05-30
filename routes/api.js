@@ -3,10 +3,21 @@ const ConvertHandler = require("../controllers/convertHandler.js");
 module.exports = function (app) {
   let convertHandler = new ConvertHandler();
   app.route("/api/convert").get(function (req, res) {
+    // console.log("req.query.input:", req.query.input);
+
+
+    // console.log("initNum:", convertHandler.getNum(req.query.input));
     let initNum = convertHandler.getNum(req.query.input) || req.query.amount;
+
     let initUnit = convertHandler.getUnit(req.query.input) || req.query.from;
-    // console.log(convertHandler.getReturnUnit(req.query.input),req.query.to)
-    let returnUnit = convertHandler.getReturnUnit(req.query.input) || req.query.to;
+    // console.log("initUnit:", convertHandler.getUnit(req.query.input));
+
+
+    let returnUnit = convertHandler.getReturnUnit(convertHandler.getUnit(req.query.input)) || req.query.to;
+    // console.log("returnUnit:", returnUnit);
+    // console.log(initNum, initUnit, returnUnit)
+
+    // console.log("convert:", convertHandler.convert(initNum, initUnit, returnUnit));
     let returnNum = convertHandler.convert(initNum, initUnit, returnUnit);
     let getString = convertHandler.getString(
       initNum,
@@ -14,7 +25,19 @@ module.exports = function (app) {
       returnNum,
       returnUnit
     );
-    // console.log('initNum:',initNum,'initUnit:' ,'initUnit:',initUnit,'returnUnit:',returnUnit,'returnNum:',returnNum,'getString:',getString)
+    // console.log(
+    //   "initNum:",
+    //   initNum,
+    //   "initUnit:",
+    //   "initUnit:",
+    //   initUnit,
+    //   "returnUnit:",
+    //   returnUnit,
+    //   "returnNum:",
+    //   returnNum,
+    //   "getString:",
+    //   getString
+    // );
     if (!initNum && !returnUnit) {
       res.send("invalid number and unit");
     } else if (!initNum) {

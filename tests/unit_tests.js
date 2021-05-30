@@ -38,7 +38,7 @@ suite("Unit Tests", function () {
   });
 
   test("convertHandler should return the correct return unit for each valid input unit.", function () {
-    assert.equal(convertHandler.getReturnUnit("1kg"), "lbs");
+    assert.equal(convertHandler.getReturnUnit("kg"), "lbs");
   });
 
   test("convertHandler should correctly return the spelled-out string unit for each valid input unit.", function () {
